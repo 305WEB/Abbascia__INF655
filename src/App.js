@@ -4,9 +4,10 @@ import './App.css';
 
 function App() {
 
-  const name = "Claudio";
+  const myName = "Claudio";
 
-  const tasks = [
+
+  const toDoList = [
     {
       id: 1,
       title: "Office Work",
@@ -14,13 +15,13 @@ function App() {
     },
 
     {
-      id: 1,
-      title: "Work",
+      id: 2,
+      title: "Design Work",
       description: "Setup oFFICE"
     },
     {
-      id: 1,
-      title: "Today Work",
+      id: 3,
+      title: "Tech Work",
       description: "Setup oFFICE"
     },
 
@@ -28,7 +29,7 @@ function App() {
 
 const taskManager = () => {
   const init = Math.floor(Math.random() * 3);
-  return tasks[init].title;
+  return toDoList[init].title;
 
 };
 
@@ -37,9 +38,9 @@ const taskManager = () => {
     
      <h1>First React App</h1>
 
-     <p>Hello: {name},tomorrow: {tasks[1].title}</p>
+     {/* <p>Hello: {name},tomorrow: {tasks[1].title}</p> */}
 
-     <p>Hello: {name},tomorrow your task is: {taskManager()}</p>
+     <p className="random">Hello: {myName},tomorrow your task is: {taskManager()}</p>
 
     </div>
   );
