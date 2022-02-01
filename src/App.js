@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import React from 'react';  // Not neede when using JSX
+// import React from 'react';  // Not needed when using JSX
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
     {
       id: 3,
       title: "Tech Work",
-      description: "Setup oFFICE"
+      description: "Setup Work space"
     },
 
   ];
@@ -38,9 +38,9 @@ const taskManager = () => {
     
      <h1>First React App</h1>
 
-     {/* <p>Hello: {name},tomorrow: {tasks[1].title}</p> */}
+     <p>Hello, {myName}:</p>
 
-     <p className="random">Hello: {myName},tomorrow your task is: {taskManager()}</p>
+     <p className="random">Tomorrow your task is: {taskManager()}</p>
 
     </div>
   );
