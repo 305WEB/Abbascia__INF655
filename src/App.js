@@ -1,55 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import Tasks from './components/Tasks';
+import MyClassCom from './components/MyClassCom';
+import { useState } from 'react';
+import TaskData from './components/TaskData';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+
+
 // import React from 'react';  // Not needed when using JSX
 
-function App() {
+export default function App() {
 
-  const myName = "Claudio";
+  // "Global" State Hook example
+  const [taskList, setTaskList] = useState(TaskData);
 
+  const [todos, setTodos] = useState([]);
 
-  const toDoList = [
-    {
-      id: 1,
-      title: "Office Work",
-      description: "Setup GITHUB"
-    },
+  // Add new todo to list
+  function addTodo(todo) {
 
-    {
-      id: 2,
-      title: "Design Work",
-      description: "Setup oFFICE"
-    },
-    {
-      id: 3,
-      title: "Tech Work",
-      description: "Setup Work space"
-    },
+    // Adds new todo to todos array
+     setTodos([todo, ...todos]);
+  }
 
-  ];
-
-const taskManager = () => {
-  const init = Math.floor(Math.random() * 3);
-  return toDoList[init].title;
-
-};
 
   return (
     <div className="App">  
     
-     <h1>First React App</h1>
+     <h1>Welcome to the Task Manager</h1>
 
-     <p>Hello, {myName}:</p>
+      {/* passes property tasklist as State */}
 
-     <p className="random">Tomorrow your task is: {taskManager()}</p>
+      <Tasks text="Hello " taskList={ taskList } /> 
+
+      <TodoForm addTodo={addTodo} />
+
+      <TodoList todos={ todos } />
+
+      {/* <MyClassCom />  Class Test*/}
+
 
     </div>
   );
 }
 
-// function App() { // Example not using JSX
 
-// return React.createElement("div", {id: "hello", className: "Test"}, React.createElement("h1", null, "Hello World"));
-
-// }
-
-export default App;
