@@ -11,15 +11,9 @@ export default function TodoForm( {addTodo }) {
 
     // (e) contains the event target value from user
     function handleTaskInputChange(e) {
-        // e.target.value contains new input from onChange
-        // event for input elements
+
         setTodo({ ...todo, task: e.target.value });
       }
-
-      // Add new todo to list
-//     function addTodo(todo) {
-//     setTodos( [todo, ...todos]);
-//   }
 
 
     // handle submit

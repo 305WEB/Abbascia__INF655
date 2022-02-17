@@ -6,16 +6,11 @@ export default function Todo({ todo }) {
 
         <div style={{ display: "flex" }}> 
 
-          <input type="checkbox" />
+          {/* <input type="checkbox" /> */}
         
-          <li style={{ 
-              color: "blue",
-              textDecoration: todo.completed ? "line-through" : null
-          }}> 
+          <li>  {todo.task} </li>
           
-          {todo.task} </li>
-          
-          <button>X</button>
+          {/* <button>X</button> */}
           
         </div> // JSX must have a parent element
     );

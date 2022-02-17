@@ -7,7 +7,6 @@ import TaskData from './components/TaskData';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
-
 // import React from 'react';  // Not needed when using JSX
 
 export default function App() {
@@ -18,10 +17,9 @@ export default function App() {
   const [todos, setTodos] = useState([]);
 
   // Add new todo to list
-  function addTodo(todo) {
-
-    // Adds new todo to todos array
-     setTodos([todo, ...todos]);
+function addTodo(todo) {
+    // adds new todo to beginning of todos array
+    setTodos([...todos, todo ]);
   }
 
 
@@ -34,7 +32,7 @@ export default function App() {
 
       <Tasks text="Hello " taskList={ taskList } /> 
 
-      <TodoForm addTodo={addTodo} />
+      <TodoForm addTodo={ addTodo } />
 
       <TodoList todos={ todos } />
 
