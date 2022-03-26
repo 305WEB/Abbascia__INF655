@@ -1,17 +1,44 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import TaskData from "./Tasks/TaskData";
 
+export default function TaskForm() {
+  const [task, setTask] = useState("");
+  const [tasklist, setTaskList] = useState([]);
 
-const [task, setTask] = useState();
+  //   const [taskList, setTaskList] = useState(TaskData);
 
-export default function TaskForm (input) {
+  const addTask = () => {
+    const taskContent = {
+      id: Math.floor(Math.random() * 300),
+      value: task
+    };
 
+    setTaskList([...tasklist, taskContent]);
+  };
 
-return (
+  const handleSubmit = (e) => {
+    setTask(e.target.value);
+  };
 
-    <input 
-        type="text"
-        value={this.state.inputVal} 
-        onChange={(e) => {this.setState({inputVal: e.target.value})}} />
+  return (
+    <div>
+      <button onClick={addTask}>Add Task</button>
 
-);
+      <br />
+      <br />
+
+      <input type="text" id="text" onChange={(e) => handleSubmit(e)} />
+
+      <br />
+
+      <ul style={{ padding: "0" }}>
+        {tasklist.map((taskItem) => (
+          <li style={{ listStyle: "none" }}>
+            {" "}
+            <p>{taskItem.value} </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
