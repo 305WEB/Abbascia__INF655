@@ -23,10 +23,6 @@ export default function Tasks() {
     <div>
       <SearchTask search={search} setSearch={setSearch} />
 
-      {/* <h2 className="random" style={{ fontWeight: "bold" }}>
-        Task List:
-      </h2> */}
-
       <div>
         {result.map((task) => (
           <Task

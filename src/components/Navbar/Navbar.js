@@ -4,20 +4,6 @@ import MenuItems from "./MenuItems";
 export default function Navbar() {
   return (
     <div className="container">
-      {/* <nav style={{ margin: "100px 0 0 40px" }}>
-        <ul>
-          {MenuItems.map((item, index) => {
-            return (
-              <li className="card" key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav> */}
-
       <nav
         className="navbar navbar-expand-md navbar-dark bg-dark"
         aria-label="Second navbar example"
@@ -40,18 +26,6 @@ export default function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarsExample02">
             <ul className="navbar-nav me-auto">
-              {/*               
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Link
-                </a>
-              </li> */}
-
               {MenuItems.map((item, index) => {
                 return (
                   <li className="nav-item" key={index}>
